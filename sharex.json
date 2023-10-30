@@ -1,0 +1,15 @@
+{
+	"Version": "15.0.0",
+	"Name": "rust-sharex-server",
+	"DestinationType": "FileUploader",
+	"RequestMethod": "POST",
+	"RequestURL": "http://localhost:6969/upload",
+	"Body": "MultipartFormData",
+	"Arguments": {
+		"userid": "youruserid",
+		"key": "super_secret_key"
+	},
+	"FileFormName": "file",
+	"URL": "{json:url}",
+	"ErrorMessage": "{json:message}"
+}
