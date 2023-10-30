@@ -1,5 +1,5 @@
 # File Uploader
-Simple file uploader for ShareX
+Simple file uploader for ShareX using Discord as authenticator
 
 ## Build and Run
 
