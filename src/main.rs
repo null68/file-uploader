@@ -57,6 +57,9 @@ fn rocket() -> _ {
     )).merge((
         "secret_key",
         generate_secret_key()
+    )).merge((
+        "address",
+        "0.0.0.0",
     ));
     rocket::custom(cfg)
         .register("/", catchers![not_found, unauthorized, forbidden])
