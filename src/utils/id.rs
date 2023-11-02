@@ -11,3 +11,15 @@ pub fn generate_id() -> String {
         .collect();
     id
 }
+
+pub fn generate_secret_key() -> String {
+    let mut rng = rand::thread_rng();
+    let chars: &[u8] = b"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    let id: String = (0..32)
+        .map(|_| {
+            let idx = rng.gen_range(0..=chars.len());
+            chars[idx] as char
+        })
+        .collect();
+    id
+}

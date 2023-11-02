@@ -5,7 +5,7 @@ use serde::{Deserialize, Serialize};
 use std::{fs::File, io::Result};
 use utils::{
     config::{setup_config, CDNConfig},
-    store::setup_filedir,
+    store::setup_filedir, id::generate_secret_key,
 };
 
 mod routers;
@@ -54,6 +54,9 @@ fn rocket() -> _ {
     let cfg = Config::figment().merge((
         "port",
         CDNConfig::new().unwrap().port(),
+    )).merge((
+        "secret_key",
+        generate_secret_key()
     ));
     rocket::custom(cfg)
         .register("/", catchers![not_found, unauthorized, forbidden])
